@@ -10,7 +10,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  /* border: 4px solid red; */
+  /* border-radius: 10px; 4px solid red; */
 }
 
 
@@ -24,6 +24,17 @@ body {
   /* border: 4px solid red; */
 }
 
+
+.signupSquare {
+  background-color: #EDF4F2;
+  width: 500px;
+  height: 600px;
+  /* border-radius: 10px; */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  /* border: 4px solid red; */
+
+}
 .title {
   /* border: 4px solid red; */
   font-size: 40px;
@@ -44,6 +55,21 @@ body {
 }
 
 .square h4 {
+  /* border: 4px solid red; */
+  margin: 60px;
+  margin-top: 120px;
+}
+
+.signupSquare h3 {
+  /* border: 4px solid red; */
+  opacity: 0.4;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  
+}
+
+.signupSquare h4 {
   /* border: 4px solid red; */
   margin: 60px;
   margin-top: 120px;
@@ -120,23 +146,65 @@ body {
 }
 
 .half1  {
-  /* border: 4px solid rgb(187, 180, 180); */
+  
   margin-bottom: 150px;
   color: #7C8363;
-  /* justify-content: center; */
-  font-size: 20px;
+   font-size: 20px;
   margin-left: 110px;
-  /* display: flex; */
-  
+   
 }
 
 .half2  {
-  /* border: 4px solid rgb(0, 0, 0); */
-  
+   
   color: #31473A;
-  /* justify-content: center; */
-  /* font-size: 20px; */
-  /* display: flex; */
-  
+  text-decoration: none;
+     
 }
 
+.signupOption {
+   width: 400px;
+  height: 100px;
+  border-radius: 80px;
+  background-color: #EDF4F2;
+  cursor: pointer;
+  margin-left: 320px;
+ }
+
+.signupOption h1 {
+  color: #4A8060;
+  text-align: center;
+  align-items: center;
+  padding-top: 10px;
+
+}
+
+.signinOption {
+  margin-left: 320px;
+  cursor: pointer;
+   width: 400px;
+  height: 100px;
+  border-radius: 80px;
+  background-color: #EDF4F2;
+  margin-top: 70px;
+  /* border: none; */
+}
+
+.signinOption h1 {
+  color: #4A8060;
+ 
+  text-align: center;
+  align-items: center;
+  padding-top: 10px;
+
+}
+
+.welcome {
+   
+  width: 210px;
+  height: 100px;
+ 
+  padding-top: 50px;
+  margin-left: 400px;
+  color: #EDF4F2;
+
+}

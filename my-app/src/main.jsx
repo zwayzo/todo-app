@@ -1,13 +1,36 @@
 import { createRoot } from "react-dom/client";
-import Calc from './App.jsx'
+import Main from './App.jsx'
+import SignIn from "./signIn.jsx";
+import SignUp from "./signUp.jsx";
+import Home from "./home.jsx";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Main />
+  },
+  {
+    path: '/signUp',
+    element: <SignUp />,
+  },
+  {
+    path: '/signIn',
+    element: <SignIn />,
+  },
+  {
+    path: '/home',
+    element: <Home />,
+  }
+]);
 const root = createRoot(document.getElementById('root'));
 root.render(
   <main>
-   <Calc />
+    <RouterProvider router={router} />
   </main>
  )
-
+ 
  /*
 Challenge: Starting from scratch, build and render the 
 HTML for our section project. Check the Google slide for 

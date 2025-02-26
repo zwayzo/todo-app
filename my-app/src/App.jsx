@@ -1,111 +1,44 @@
-// import React from "react";
 
-// import { createElement } from "react";
-import { Fragment } from 'react'
+import axios from 'axios'
+import { useState, useEffect, Fragment } from 'react'
 
-// function Logo(){
-//   return (
-//     <img id="logo" src="download.png" alt="logo"/>
-//   )
-// }
+export default function Main() {
+  console.log("here\n");
+  const [data, setData] = useState({});
 
-function Header(){
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:8000/api/test/');
+        setData(response.data);
+        console.log(response.data)
+      } catch (error) {
+        console.error("error fetching data:",error);
+      }
+      };
+    fetchData();
+  }, [])
   return (
-    <header className='header'>
-     
-    </header>
-  )
-}
-
-function MyForm() {
-  return (
-    <form className='inputForm'>
-      <label className='emailLabel'>
-        Email
-        <input type="text" name='email' placeholder='Type your email' />
-      </label>
-      <label className='emailLabel'>
-        Password
-        <input type="text" name='password' placeholder='Type your password'/>
-      </label>
-      
-    </form>
-  )
-}
-
-function SignupForm() {
-  return (
-    <form className='inputForm'>
-      <label className='emailLabel'>
-        Email
-        <input type="text" name='email' placeholder='Type your email' />
-      </label>
-      <label className='emailLabel'>
-        Password
-        <input type="text" name='password' placeholder='Type your password'/>
-      </label>
-      <label className='emailLabel'>
-        Password
-        <input type="text" name='password' placeholder='Retype your password'/>
-      </label>
-      
-    </form>
-  )
-}
-
-
-function SignIn(){
-  return (
-    <div className='square'>
-      <div className='title'>Sign in</div>
-      <h3>Welcome again CHAMP to your <br />favorite exercise app</h3>
-      <MyForm />
-      <button  className='signinButton' variant="contained">SIGN IN</button>
-      <h2 className='noPass'>Forgot you password?</h2>
-      <h2>
-        <span className='half1'>D'ont have an account.</span>{' '}
-        <span className='half2'>Registre</span>
-      </h2>
+    <div>
+      <h1>Data from API:</h1>
+      {/* ❌ No checking, this may throw an error if `message` is undefined */}
+      <h1>{data.message}</h1>
     </div>
-  )
-}
-
-function SignUp(){
-  return (
-    <div className='square'>
-      <div className='title'>Sign Up</div>
-      <h3>Welcome again CHAMP to your <br />favorite exercise app</h3>
-      <SignupForm />
-      <button  className='signinButton' variant="contained">SIGN UP</button>
-      <h2 className='noPass'>Forgot you password?</h2>
-      <h2>
-        <span className='half1'>D'ont have an account.</span>{' '}
-        <span className='half2'>Registre</span>
-      </h2>
-    </div>
-  )
-}
-
-export default function Calc() {
-  return (
-    <Fragment >
-      <Header />
-      <SignUp />
-    </Fragment>
-
-
   );
+
+  // return (
+  //   <Fragment >
+  //     {/* <div className='welcome'> */}
+  //     <h1 className='welcome'> choose </h1>
+  //     {/* </div> */}
+  //     <button className='signupOption'>
+  //       <h1>Sign up</h1>
+  //     </button>
+  //     <button className='signinOption'>
+  //       <h1>Sign in</h1>
+  //     </button>
+  //   </Fragment>
+  // );
 }
 
-// Default export (if needed)
-// export function App() {
-//   return (
-//     <section>
-//       <ul>
-//         <li>Hello</li>
-//         <li>Welcome</li>
-//         <li>Hola</li>
-//       </ul>
-//     </section>
-//   );
-// }
+
